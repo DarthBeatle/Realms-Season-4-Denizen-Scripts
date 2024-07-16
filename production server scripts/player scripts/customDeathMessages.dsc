@@ -111,32 +111,10 @@ Custom_Death_Messages:
                 - case WITHER:
                     - determine <[death_messages].parsed_key[wither_effect].random>
 
-# For when a player kills themselves or is killed by another player
-            # - if <context.damager.name> == <player.name>:
-            #     - random:
-            #         - determine "<gray><player.name>, WHY... JUST WHY?"
-            #         - determine "<gray><player.name.to_uppercase> TROLLED THEMSELVES XDXDXDXDXDXD!!!"
-            #         - determine "<gray><player.name> killed themselves, smh"
-            # - if <context.damager.name> != <player.name> && <context.damager> == PLAYER:
-            #     - random:
-            #         - determine "<green><context.damager.name> <gray>PWNED <red><player.name><gray>! WHAT A NOOB!"
-            #         - determine "<red><player.name> <gray>was killed by <green><context.damager.name><gray>!"
-
 # For death causes
 
 # # For killed by player or mobs
 #             - if <context.damager.exists>:
-#                 # detects if player killed themselves
-#                 - if <context.damager.name> == <player.name>:
-#                     - random:
-#                         - determine "<gray><player.name>, WHY... JUST WHY?"
-#                         - determine "<gray><player.name.to_uppercase> TROLLED THEMSELVES XDXDXDXDXDXD!!!"
-#                         - determine "<gray><player.name> killed themselves, smh"
-#                 # Detects if player was kille by another player
-#                 - if <context.damager.name> != <player.name> && <context.damager.is_player>:
-#                     - random:
-#                         - determine "<green><context.damager.name> <gray>PWNED <red><player.name><gray>! WHAT A NOOB!"
-#                         - determine "<red><player.name> <gray>was killed by <green><context.damager.name><gray>!"
 #                 - choose <context.damager.name>:
 #                     - case SKELETON:
 #                         - random:
