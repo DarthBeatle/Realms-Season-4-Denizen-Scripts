@@ -124,3 +124,4 @@ Custom_Death_Message_Data:
     wither_effect:
         - <gray><player.name> withered and shriveled
         - <gray>Withered with age, <player.name> has turned to dust
+# MOBS

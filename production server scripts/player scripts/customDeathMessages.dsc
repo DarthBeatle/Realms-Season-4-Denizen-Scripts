@@ -10,8 +10,7 @@ Custom_Death_Messages:
             - choose <context.cause>:
 
                 - case BLOCK_EXPLOSION:
-                    #TODO: Add messages for when player blows themselves up
-                    #TODO: Add messages for when player is blown up by another player
+                    #TODO: Add messages for when player blows themselves up. TNT, End Crystal, etc. Flag player right click or projectile shooter
                     #TODO: Add explosion messages for: End Crystal, Firework Rocket, Creeper
                     #TODO: Add potion and dragon breath deaths. Wait for potion bugs to be fixed in Denizen
 # Death by TNT
@@ -111,39 +110,98 @@ Custom_Death_Messages:
                 - case WITHER:
                     - determine <[death_messages].parsed_key[wither_effect].random>
 
-# For death causes
-
-# # For killed by player or mobs
-#             - if <context.damager.exists>:
-#                 - choose <context.damager.name>:
-#                     - case SKELETON:
-#                         - random:
-#                             - determine "<gray><player.name>: I swear he had aimbot!"
-#                             - determine "<gray><player.name> got dunked on"
-#                             - determine "<gray><player.name> took an arrow to the knee"
-#                             - determine "<gray><player.name> died from a pew pew"
-#                             - determine "<gray><player.name> was shot by skelly boi"
-#                     - case CREEPER:
-#                         - random:
-#                             - determine "<gray><player.name> went out with a bang!"
-#                             - determine "<gray><player.name> hugged a creeper"
-#                             - determine "<gray><player.name> did not hear the SSSsss"
-#                             - determine "<gray><player.name> doesn't believe in shields"
-#                     - case SLIME:
-#                         - random:
-#                             - determine "<gray><player.name> was slain by slime, and embarrassment as well"
-#                             - determine "<gray><player.name> got slimed"
-#                             - determine "<gray><player.name> is an embarrassment to the server"
-#                             - determine "<gray><player.name> has no clue what they are doing"
-#                             - determine "<gray>The lowly slime has slain <player.name>. Oh how the mighty have fallen!"
-#                     - case ENDERMAN:
-#                         - random:
-#                             - determine "<gray><player.name> got berried by an enderman"
-#                             - determine "<gray><player.name> incurred the wrath of the elder gods and lost"
-#                             - determine "<gray><player.name> lost a staring contest"
-#                             - determine "<gray><player.name> tried to hug an enderman"
-#                     - default:
-#                         - determine "<gray><player.name> died to an unknown cause"
+# For killed by mobs
+            - if <context.damager.exists>:
+                - choose <context.damager.entity_type>:
+                    # - case BEE:
+                    # # Blaze melee or fireball
+                    # - case BLAZE:
+                    # - case CAVE_SPIDER:
+                    # - case CHICKEN_JOCKEY:
+                    - case CREEPER:
+                        - random:
+                            - determine "<gray><player.name> went out with a bang!"
+                            - determine "<gray><player.name> hugged a creeper"
+                            - determine "<gray><player.name> did not hear the SSSsss"
+                            - determine "<gray><player.name> doesn't believe in shields"
+                    # - case CHARGED_CREEPER:
+                    ## Drowned Trident ranged or melee
+                    # - case DROWNED:
+                    ## Elder Guardian laser or spikes
+                    # - case ELDER_GUARDIAN:
+                    ## Ender Dragon melee or wings or breath or dragon fireball
+                    # - case ENDER_DRAGON:
+                    - case ENDERMAN:
+                        - random:
+                            - determine "<gray><player.name> got berried by an enderman"
+                            - determine "<gray><player.name> incurred the wrath of the elder gods and lost"
+                            - determine "<gray><player.name> lost a staring contest"
+                            - determine "<gray><player.name> tried to hug an enderman"
+                    # - case ENDERMITE:
+                    # - case EVOKER_FANGS:
+                    ## Ghast fireball impact or explosion
+                    # - case GHAST:
+                    # - case GOAT:
+                    ## Guardian laser or spikes
+                    # - case GUARDIAN:
+                    # - case HOGLIN:
+                    # - case BABY_HOGLIN:
+                    # - case HUSK:
+                    # - case IRON_GOLEM:
+                    # - case LLAMA_SPIT:
+                    ## Magma Cube big or medium or small
+                    # - case MAGMA_CUBE:
+                    # - case PANDA:
+                    # - case PHANTOM:
+                    ## Piglin arrow or sword or melee
+                    # - case PIGLIN:
+                    # - case PIGLIN_BRUTE:
+                    # - case PILLAGER:
+                    # - case POLAR_BEAR:
+                    # - case PUFFERFISH:
+                    ## Ravager melee or roar
+                    # - case RAVAGER:
+                    # - case SHULKER:
+                    # - case SILVERFISH:
+                    ## Skeleton arrow or melee or horseman arrow
+                    - case SKELETON:
+                        - random:
+                            - determine "<gray><player.name>: I swear he had aimbot!"
+                            - determine "<gray><player.name> got dunked on"
+                            - determine "<gray><player.name> took an arrow to the knee"
+                            - determine "<gray><player.name> died from a pew pew"
+                            - determine "<gray><player.name> was shot by skelly boi"
+                    ## Slime big or medium or small
+                    - case SLIME:
+                        - random:
+                            - determine "<gray><player.name> was slain by slime, and embarrassment as well"
+                            - determine "<gray><player.name> got slimed"
+                            - determine "<gray><player.name> is an embarrassment to the server"
+                            - determine "<gray><player.name> has no clue what they are doing"
+                            - determine "<gray>The lowly slime has slain <player.name>. Oh how the mighty have fallen!"
+                    # - case SPIDER:
+                    # - case SPIDER_JOCKEY:
+                    ## Stray arrow or melee
+                    # - case STRAY:
+                    # - case TRADER_LLAMA_SPIT:
+                    # - case VEX:
+                    # - case VINDICATOR:
+                    # - case WARDEN:
+                    # - case WITCH:
+                    # - case WITHER_SKELETON:
+                    ## Wither explosion
+                    # - case WITHER:
+                    # - case WITHER_SKULL:
+                    ## Wolf tamed or hostile
+                    # - case WOLF:
+                    # - case ZOGLIN:
+                    # - case BABY_ZOGLIN:
+                    ## Zombie baby
+                    # - case ZOMBIE:
+                    # - case ZOMBIFIED_PIGLIN:
+                    # - cae ZOMBIE_VILLAGER:
+                    - default:
+                        - determine "<gray><player.name> died to a <context.damager.entity_type>"
 
 # Death by Ender Pearl
             - if <context.damager.exists> && <context.damager.name> == <player.name> && <context.projectile.name> == ENDER_PEARL:
