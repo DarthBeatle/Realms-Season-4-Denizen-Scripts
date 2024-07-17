@@ -1,6 +1,6 @@
 Custom_Death_Messages:
-    debug: true
     type: world
+    debug: true
     events:
         on player death:
 
@@ -113,10 +113,15 @@ Custom_Death_Messages:
 # For killed by mobs
             - if <context.damager.exists>:
                 - choose <context.damager.entity_type>:
-                    # - case BEE:
-                    # # Blaze melee or fireball
-                    # - case BLAZE:
-                    # - case CAVE_SPIDER:
+                    - case BEE:
+                        - determine <[death_messages].parsed_key[bee].random>
+                    - case BLAZE:
+                        - if <context.projectile.exists>:
+                            - determine <[death_messages].parsed_key[blaze_fireball].random>
+                        - else:
+                            - determine <[death_messages].parsed_key[blaze_melee].random>
+                    - case CAVE_SPIDER:
+                        - determine <[death_messages].parsed_key[cave_spider].random>
                     # - case CHICKEN_JOCKEY:
                     - case CREEPER:
                         - random:
@@ -163,14 +168,16 @@ Custom_Death_Messages:
                     # - case RAVAGER:
                     # - case SHULKER:
                     # - case SILVERFISH:
-                    ## Skeleton arrow or melee or horseman arrow
                     - case SKELETON:
-                        - random:
-                            - determine "<gray><player.name>: I swear he had aimbot!"
-                            - determine "<gray><player.name> got dunked on"
-                            - determine "<gray><player.name> took an arrow to the knee"
-                            - determine "<gray><player.name> died from a pew pew"
-                            - determine "<gray><player.name> was shot by skelly boi"
+                    # Check if skeleton is a spider jockey or horseman
+                        - if <context.damager.is_inside_vehicle>:
+                            - choose <context.damager.vehicle.entity_type>:
+                                - case SPIDER:
+                                    - determine <[death_messages].parsed_key[spider_jockey].random>
+                                - case SKELETON_HORSE:
+                                    - determine <[death_messages].parsed_key[skeleton_horseman].random>
+                        - else:
+                            - determine <[death_messages].parsed_key[skeleton].random>
                     ## Slime big or medium or small
                     - case SLIME:
                         - random:
@@ -197,11 +204,18 @@ Custom_Death_Messages:
                     # - case ZOGLIN:
                     # - case BABY_ZOGLIN:
                     ## Zombie baby
-                    # - case ZOMBIE:
+                    - case ZOMBIE:
+                    # Check if it is a baby
+                        - if !<context.damager.is_baby>:
+                            - determine <[death_messages].parsed_key[zombie].random>
+                        - else if !<context.damager.is_inside_vehicle>:
+                             - determine <[death_messages].parsed_key[baby_zombie].random>
+                        - else:
+                            - determine <[death_messages].parsed_key[chicken_jockey].random>
                     # - case ZOMBIFIED_PIGLIN:
                     # - cae ZOMBIE_VILLAGER:
                     - default:
-                        - determine "<gray><player.name> died to a <context.damager.entity_type>"
+                        - determine "<gray><player.name> died to a <context.damager.entity_type.to_lowercase>"
 
 # Death by Ender Pearl
             - if <context.damager.exists> && <context.damager.name> == <player.name> && <context.projectile.name> == ENDER_PEARL:

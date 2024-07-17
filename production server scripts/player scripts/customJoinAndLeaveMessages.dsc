@@ -1,6 +1,6 @@
 Custom_Join_And_Leave_Messages:
-    debug: false
     type: world
+    debug: false
     events:
         on player joins:
             - random:

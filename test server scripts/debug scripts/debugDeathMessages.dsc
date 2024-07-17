@@ -1,6 +1,6 @@
 Debug_Death_Messages:
-    debug: true
     type: world
+    debug: true
     events:
         on player death:
         ## For Debugging

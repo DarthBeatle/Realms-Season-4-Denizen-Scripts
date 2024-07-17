@@ -1,6 +1,6 @@
 Detect_Contact_Damager_Block:
-    debug: true
     type: world
+    debug: true
     description: detect when a player takes damage from cactus, pointed dripstone or sweet berry bush
     events:
         on player damaged by contact:

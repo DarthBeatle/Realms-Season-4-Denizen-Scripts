@@ -1,6 +1,6 @@
 Detect_Player_Clicks_Explosive_Block:
-    debug: true
     type: world
+    debug: true
     description: This script is used for custom death messages
     events:
         on player right clicks respawn_anchor in:world:

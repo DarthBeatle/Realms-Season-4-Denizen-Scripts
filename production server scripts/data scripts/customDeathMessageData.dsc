@@ -1,13 +1,13 @@
 Custom_Death_Message_Data:
-    debug: true
     type: data
+    debug: true
     anvil:
         - <gray><player.name> was flattened
         - <gray><player.name> was hit by a flying anvil
         - <gray><player.name> earned workers comp at ACME
     bed_end:
-    - <gray><player.name> was probably trying to bed bomb the ender dragon
-    - <gray><player.name> tried to sleep in the end
+        - <gray><player.name> was probably trying to bed bomb the ender dragon
+        - <gray><player.name> tried to sleep in the end
     bed_nether:
         - <gray><player.name> was probably looking for ancient debris
         - <gray><player.name> tried to sleep in the nether
@@ -125,3 +125,35 @@ Custom_Death_Message_Data:
         - <gray><player.name> withered and shriveled
         - <gray>Withered with age, <player.name> has turned to dust
 # MOBS
+    bee:
+        - <gray><player.name> was stung one too many times
+        - <gray><player.name> should stop trying to steal the bee's hard earned honey!
+        - <gray><player.name> has been found guilty of crimes againt bee-manity
+    blaze_fireball:
+        - <gray><player.name> was sniped by a blaze
+        - <gray>Blaze used fireball. It's super effective! <player.name> fainted!
+    blaze_melee:
+        - <gray><player.name> was taken down by a blaze in cqc
+        - <gray><player.name> stood too close to a blaze
+        - <gray><player.name> was in close proximity to a blaze
+    cave_spider:
+        - <gray><player.name> was annoyed to death by cave spiders
+        - <gray><player.name> forgot to bring a bucket of milk and died to a cave spider
+    skeleton:
+        - <gray><player.name>: I swear he had aimbot!
+        - <gray><player.name> got dunked on
+        - <gray><player.name> took an arrow to the knee
+        - <gray><player.name> died from a pew pew
+        - <gray><player.name> was shot by skelly boi
+    skeleton_horseman:
+        - <gray><player.name> was slain by one of the four horsemen of the apocalypse
+    spider_jockey:
+        - <gray><player.name> was slain by a spider jockey! How rare!
+        - <gray><player.name> encountered a spider jockey!
+        - <gray><player.name>: No way! A skeleton riding a spider? I'm gonna put that in my mob museum!
+    zombie:
+        - <gray><player.name> was ambushed by a zombie
+    baby_zombie:
+        - <gray><player.name> could not escape the baby zombie
+    chicken_jockey:
+        - <gray><player.name> was defeated by a chicken jockey

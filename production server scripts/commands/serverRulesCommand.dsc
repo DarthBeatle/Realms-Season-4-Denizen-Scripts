@@ -1,6 +1,6 @@
 Server_Rules_Command:
-    debug: false
     type: command
+    debug: false
     name: rules
     usage: /rules
     description: Display server rules
